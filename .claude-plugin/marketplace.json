@@ -1,0 +1,22 @@
+{
+  "name": "saudi-agent-skills",
+  "owner": {
+    "name": "Khalid Alharthi",
+    "email": "khalid@rudud.com"
+  },
+  "metadata": {
+    "description": "Saudi businesses skills",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "payment-skills",
+      "description": "Collection of payment solutions",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/moyasar"
+      ]
+    }
+  ]
+}
