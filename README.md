@@ -1,6 +1,6 @@
 # Saudi Skills
 
-Claude Code skills for Saudi businesses. Integrations for local payment gateways, services, and platforms.
+AI skills for Saudi businesses. Integrations for local payment gateways, services, and platforms.
 
 ## Usage
 
