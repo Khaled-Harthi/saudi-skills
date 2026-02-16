@@ -5,17 +5,18 @@
     "email": "khalid@rudud.com"
   },
   "metadata": {
-    "description": "Saudi businesses skills",
-    "version": "1.0.0"
+    "description": "AI skills for Saudi businesses. Integrations for local payment gateways, services, and platforms.",
+    "version": "1.1.0"
   },
   "plugins": [
     {
-      "name": "payment-skills",
-      "description": "Collection of payment solutions",
+      "name": "saudi-skills",
+      "description": "Skills for integrating with Saudi digital services — payment gateways, OTP providers, and other local platforms",
       "source": "./",
       "strict": false,
       "skills": [
-        "./skills/moyasar"
+        "./skills/moyasar",
+        "./skills/authentica-otp"
       ]
     }
   ]
