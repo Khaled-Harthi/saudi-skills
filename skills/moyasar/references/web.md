@@ -193,6 +193,29 @@ Moyasar.init({
 | Callback | Description |
 |----------|-------------|
 | `on_initiating` | Before payment. Return `false` to cancel |
-| `on_completed` | Payment created. Check `payment.status` |
+| `on_completed` | Payment created, before 3DS redirect. **Save payment ID here** |
 | `on_failure` | Network/validation error |
 | `on_redirect` | Intercept redirect (for SPAs) |
+
+### Save Payment ID (Recommended)
+
+Use `on_completed` to save the payment ID to your backend **before** the 3DS redirect. This enables a simpler verification flow:
+
+1. `on_completed` fires → save payment ID + order info to your database
+2. User redirects back via `callback_url` → trust the client status for UX (show success/error)
+3. Webhook arrives later → match payment ID, verify status, then action it (enable subscription, confirm purchase, etc.)
+
+This avoids needing an immediate server-side API call to verify every payment. It also protects against connection drops during redirect — you already have the payment record.
+
+```javascript
+Moyasar.init({
+  // ... base config
+  on_completed: async function (payment) {
+    await fetch('/api/orders/save-payment', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ order_id: '123', payment_id: payment.id })
+    });
+  }
+});
+```
