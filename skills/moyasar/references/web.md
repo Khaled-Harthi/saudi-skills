@@ -211,11 +211,7 @@ This avoids needing an immediate server-side API call to verify every payment. I
 Moyasar.init({
   // ... base config
   on_completed: async function (payment) {
-    await fetch('/api/orders/save-payment', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ order_id: '123', payment_id: payment.id })
-    });
+    await savePaymentOnBackend(payment);
   }
 });
 ```
