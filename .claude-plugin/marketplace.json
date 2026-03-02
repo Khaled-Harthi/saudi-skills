@@ -6,7 +6,7 @@
   },
   "metadata": {
     "description": "AI skills for Saudi businesses. Integrations for local payment gateways, services, and platforms.",
-    "version": "1.1.0"
+    "version": "1.1.1"
   },
   "plugins": [
     {
