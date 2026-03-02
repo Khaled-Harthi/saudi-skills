@@ -13,7 +13,7 @@
       "name": "saudi-skills",
       "description": "Skills for integrating with Saudi digital services — payment gateways, OTP providers, and other local platforms",
       "source": "./",
-      "strict": true,
+      "strict": false,
       "skills": [
         "./skills/moyasar",
         "./skills/authentica-otp"
